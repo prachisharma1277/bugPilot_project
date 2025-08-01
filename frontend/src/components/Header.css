@@ -1,0 +1,121 @@
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  color: white;
+  background-color:#94a4f6;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.blog{
+  display:flex;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f8f8f9;
+}
+
+.burger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.account-btn{
+  height:30px;
+  width:32px;
+ 
+  border-radius:15px;
+}
+.avatar-icon{
+  border-radius: 15px;
+  height:30px;
+  width:30px;
+ 
+}
+.account-wrapper{
+   border-radius: 15px;
+  height:30px;
+  width:30px;
+}
+/* === Account Dropdown Styling === */
+
+.account-wrapper {
+  position: relative;
+}
+
+.account{
+  justify-content:space-between ;
+  align-items: center;
+  display:flex;
+
+}
+.account_space{
+  margin-right:5px;
+}
+
+.account-btn.active .avatar-icon {
+  border-color: #0078d4;
+}
+
+.account-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 260px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+}
+
+.account-dropdown p {
+  margin: 4px 0;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.account-dropdown strong {
+  font-size: 1rem;
+  color: #222;
+}
+
+.account-dropdown hr {
+  margin: 12px 0;
+  border: none;
+  height: 1px;
+  background-color:#f2f0f9;
+}
+
+.dropdown-btn {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 4px 0;
+  background-color: #f2f0f9;
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: #c3d4ef;
+}

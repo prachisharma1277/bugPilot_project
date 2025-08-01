@@ -1,0 +1,73 @@
+.main-content {
+  flex-grow: 1;
+  padding: 32px;
+  background-color: #0a0f2c; /* Very dark blue */
+  color: #f0f0f0; /* Light text for readability */
+  min-height: 100vh;
+  overflow-y: auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.main-content h1 {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #3a3f58;
+  padding-bottom: 8px;
+}
+
+.main-content h2,
+.main-content h3 {
+  color: #c0caf5;
+  margin-top: 24px;
+}
+.project-card h3{
+  color:#03021c;
+}
+.main-content p,
+.main-content li {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.main-content ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.main-content a {
+  color: #85c1ff;
+  text-decoration: underline;
+}
+
+.main-content a:hover {
+  color: #58a6ff;
+}
+.reviews {
+  margin-top: 24px;
+  padding-left: 16px;
+}
+
+.reviews blockquote {
+  border-left: 4px solid #5d6dcc;
+  background-color: #121a3a;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #dcdcdc;
+  border-radius: 6px;
+}
+
+.reviews footer {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  text-align: right;
+}
+.dashboard-header h2{
+  color: #fff;
+}
+.team-section h3{
+  color: #fff;
+}

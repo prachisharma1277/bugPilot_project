@@ -1,0 +1,53 @@
+/* Basic reset */
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix: set full height */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* App layout container */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Layout body area that holds sidebar and main */
+.layout-body {
+  display: flex;
+  flex: 1;
+  height: calc(100vh-60px);
+  margin-top: 30px;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  background-color: #1f2937;
+  color: #d1d5db;
+  padding: 20px;
+  text-align: center;
+}
