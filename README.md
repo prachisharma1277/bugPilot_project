@@ -3,9 +3,9 @@
 **BugPilot** is a full-stack project collaboration and bug tracking tool designed to streamline team workflows. It allows users to manage projects, report and track bugs, and collaborate with team members in a clean and interactive interface.
 
 ### 🔧 Tech Stack
-- **Frontend:** React.js (with Tailwind CSS)
+- **Frontend:** React.js (styled with CSS)
 - **Backend:** Flask (Python, SQLAlchemy, JWT Authentication)
-- **Database:** SQLite / PostgreSQL
+- **Database:** SQLite
 
 ### ✅ Key Features
 - User authentication (Email/Password & Google Login)
