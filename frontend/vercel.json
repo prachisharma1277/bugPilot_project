@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://your-backend.vercel.app/:path*"
+      "destination": "https://bug-pilot-project-ftz1.vercel.app/:path*"
     }
   ]
 }
