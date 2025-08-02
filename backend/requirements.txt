@@ -26,4 +26,8 @@ Werkzeug
 WTForms
 flask_bcrypt
 flask_jwt_extended
+python-dotenv
+requests
+google-auth
+google-auth-oauthlib
 
