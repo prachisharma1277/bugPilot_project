@@ -31,7 +31,6 @@ Jinja2
 Mako
 MarkupSafe
 packaging
-pip
 pipdeptree
 platformdirs
 playsound
