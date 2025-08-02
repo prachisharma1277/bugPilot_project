@@ -13,7 +13,7 @@ load_dotenv()  # loads .env
 
 
     
-app = Flask(__name__)
+app = Flask(__name__ , instance_path='/tmp')
 
 # 1. Database Config
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydb.sqlite3'
