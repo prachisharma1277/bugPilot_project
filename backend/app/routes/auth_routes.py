@@ -3,7 +3,7 @@ from app.models import db, User
 from werkzeug.security import generate_password_hash, check_password_hash
 from google.oauth2 import id_token
 from google.auth.transport import requests as grequests
-
+import os
 auth_bp = Blueprint('auth_bp', __name__)
 
 # Register with email & password
@@ -70,7 +70,9 @@ def google_login():
         return jsonify({'error': 'Missing Google credential token'}), 400
 
     try:
-        CLIENT_ID = "1098681507359-nb9ia7pr1s0itmva86anpeafc7jp7ppb.apps.googleusercontent.com"
+        CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
+        idinfo = id_token.verify_oauth2_token(token, grequests.Request(), CLIENT_ID)
+
         idinfo = id_token.verify_oauth2_token(token, grequests.Request(), CLIENT_ID)
 
         google_id = idinfo['sub']

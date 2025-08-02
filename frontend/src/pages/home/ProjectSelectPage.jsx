@@ -17,6 +17,7 @@ function ProjectSelectPage() {
   const [invitedSearchTerm, setInvitedSearchTerm] = useState("");
   const [invites, setInvites]=useState([]);
   const [showInvites, setShowInvites]=useState(false);
+   const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     if (user?.id) {
@@ -30,7 +31,7 @@ function ProjectSelectPage() {
   const fetchInvites=async(userId)=>{
     try{
        const res = await axios.get(
-        `http://localhost:5000/api/projects/invites/${userId}`,
+        `${API_URL}/api/projects/invites/${userId}`,
         {
           withCredentials: true,
         }
@@ -44,14 +45,14 @@ function ProjectSelectPage() {
   const fetchProjects = async (userId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/projects/${userId}`,
+        `${API_URL}/api/projects/${userId}`,
         {
           withCredentials: true,
         }
       );
       setYourProjects(res.data);
       const rest = await axios.get(
-        `http://localhost:5000/api/projects/invited/${userId}`,
+        `${API_URL}/api/projects/invited/${userId}`,
         {
           withCredentials: true,
         }
@@ -64,7 +65,7 @@ function ProjectSelectPage() {
    const handleResponse=async(response, inviteId)=>{
      try {
       const res = await axios.post(
-        "http://localhost:5000/api/projects/invites/respond",
+        `${API_URL}/api/projects/invites/respond`,
         {
           invite_id:inviteId,
           action: response,
@@ -91,7 +92,7 @@ function ProjectSelectPage() {
 
     try {
       const res = await axios.delete(
-        `http://localhost:5000/api/projects/delete/${projectId}`,
+        `${API_URL}/api/projects/delete/${projectId}`,
         {
           withCredentials: true,
         }
@@ -127,7 +128,7 @@ function ProjectSelectPage() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/projects/create",
+        `${API_URL}/api/projects/create`,
         {
           title: projectName,
           user_id: user.id,

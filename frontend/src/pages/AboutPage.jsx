@@ -8,7 +8,7 @@ export default function AboutPage() {
       <div className="main-content">
         <h1>About Our Project</h1>
         <p>
-          Welcome to BugTrackr, your smart bug-tracking and project collaboration platform!
+          Welcome to BugPilot, your smart bug-tracking and project collaboration platform!
           Our tool helps teams efficiently report, manage, and resolve bugs in real-time.
           With intuitive UI, role-based access, and team collaboration features, it’s ideal for software teams of all sizes.
         </p>
@@ -16,7 +16,7 @@ export default function AboutPage() {
         <h2>Key Features</h2>
         <ul>
           <li>🪲 Easy bug reporting and status tracking</li>
-          <li>👥 Team member invitations & role management</li>
+          <li>👥 Team member invitations</li>
           <li>📂 Project-wise organization</li>
           <li>📊 Filter bugs by status, priority, and assignee</li>
         </ul>

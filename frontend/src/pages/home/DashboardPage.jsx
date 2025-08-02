@@ -16,6 +16,7 @@ export default function DashboardPage() {
   const inviteLink = "https://yourapp.com/register";
   const user = JSON.parse(localStorage.getItem("user"));
   const project = JSON.parse(localStorage.getItem("selectedProject"));
+   const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     if (project?.id) {
@@ -27,7 +28,7 @@ export default function DashboardPage() {
   const fetchBugs = async (projectId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/bugs/${projectId}`,
+        `${API_URL}/api/bugs/${projectId}`,
         {
           data: { user_id: user.id },
         }
@@ -41,7 +42,7 @@ export default function DashboardPage() {
   const fetchTeamMembers = async (projectId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/projects/${projectId}/members`
+        `${API_URL}/api/projects/${projectId}/members`
       );
       setTeam(res.data);
     } catch (error) {
@@ -55,7 +56,7 @@ export default function DashboardPage() {
 
     try {
      const response= await axios.post(
-        `http://localhost:5000/api/projects/${project.id}/invite`,
+        `${API_URL}/api/projects/${project.id}/invite`,
         {
           owner_id: user.id,
           invite_email: inviteEmail,
@@ -85,7 +86,7 @@ export default function DashboardPage() {
     if (!window.confirm("Remove member?")) return;
     try {
       await axios.post(
-        `http://localhost:5000/api/projects/${project.id}/remove`,
+        `${API_URL}/api/projects/${project.id}/remove`,
         {
           owner_id: user.id,
           remove_user_id: memberId,
@@ -101,7 +102,7 @@ export default function DashboardPage() {
   const handleDeleteBug = async (bugId) => {
     if (!window.confirm("Are you sure you want to delete this bug?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/bugs/${bugId}`);
+      await axios.delete(`${API_URL}/api/bugs/${bugId}`);
       fetchBugs(project.id); // refresh the list
     } catch (error) {
       console.error("Error deleting bug:", error);
@@ -113,7 +114,7 @@ export default function DashboardPage() {
     e.preventDefault();
     const { title, description, status, priority, assignee } = e.target;
     try {
-      await axios.post("http://localhost:5000/api/bugs/create", {
+      await axios.post(`${API_URL}/api/bugs/create`, {
         title: title.value,
         status: status.value,
         priority: priority.value,

@@ -6,6 +6,7 @@ from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 from config import Config
 from app.models import db
+import os
 
 
 bcrypt = Bcrypt()
@@ -22,7 +23,7 @@ def create_app():
    
     CORS(
      app,
-     origins="http://localhost:5173",
+     origins=[os.getenv("FRONTEND_URL")],
      supports_credentials=True,
      allow_headers=["Content-Type", "Authorization"],
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]

@@ -1,11 +1,11 @@
 from flask import Blueprint, request, jsonify
 from app.models import Project,User,InvitedProject,Invites, db
 from flask_cors import cross_origin
-
+import os
 project_bp = Blueprint('project_bp', __name__)
 
 @project_bp.route('/<int:project_id>/invite', methods=['POST'])
-@cross_origin(origins=["http://localhost:5173"])
+@cross_origin(origins=[os.getenv("FRONTEND_URL")])
 def invite_member(project_id):
     data = request.get_json()
     inviter_id = data.get("owner_id")  # current logged-in user
@@ -145,7 +145,7 @@ def get_projects(user_id):
     
 
 @project_bp.route('/create', methods=['POST', 'OPTIONS'])
-@cross_origin(origins="http://localhost:5173", supports_credentials=True)
+@cross_origin(origins=[os.getenv("FRONTEND_URL")], supports_credentials=True)
 def create_project():
     if request.method == "OPTIONS":
         print("OPTIONS preflight received")
@@ -180,7 +180,7 @@ def create_project():
         return jsonify({"error": str(e)}), 500
     
 @project_bp.route('/delete/<int:project_id>', methods=["DELETE", "OPTIONS"])
-@cross_origin(origins="http://localhost:5173", supports_credentials=True)
+@cross_origin(origins=[os.getenv("FRONTEND_URL")], supports_credentials=True)
 def delete_project(project_id):
     if request.method == "OPTIONS":
         # Return a simple 200 OK for preflight
