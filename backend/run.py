@@ -16,7 +16,7 @@ load_dotenv()  # loads .env
 app = Flask(__name__ , instance_path='/tmp')
 
 # 1. Database Config
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydb.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 print(f"Using DB at: {app.config['SQLALCHEMY_DATABASE_URI']}")
