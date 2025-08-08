@@ -13,7 +13,7 @@ export default function DashboardPage() {
   const [showInviteModal, setShowInviteModal] = useState(false);
   const [inviteEmail, setInviteEmail] = useState("");
   const [showRegisterInviteModal, setShowRegisterInviteModal] = useState(false);
-  const inviteLink = "https://yourapp.com/register";
+  const inviteLink = "https://bug-pilot-project-avu8.vercel.app";
   const user = JSON.parse(localStorage.getItem("user"));
   const project = JSON.parse(localStorage.getItem("selectedProject"));
    const API_URL = import.meta.env.VITE_API_URL;
