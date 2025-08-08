@@ -12,7 +12,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(120), nullable=False, unique=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(128))
+    password = db.Column(db.String(512))
     projects = db.relationship('Project', backref='owner', lazy=True)
     invited_projects = db.relationship('InvitedProject', backref='invitee', lazy=True,  cascade='all, delete-orphan')
     
