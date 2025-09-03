@@ -1,4 +1,4 @@
-import "./LoginPage.css";
+import "./LoginPage.css"; 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -7,12 +7,12 @@ import { GoogleLogin } from "@react-oauth/google";
 function LoginPage() {
   const navigate = useNavigate();
 
-  const [isLogin, setIsLogin] = useState(true); // toggle login/signup
+  const [isLogin, setIsLogin] = useState(true); 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [loading, setLoading] = useState(false); // loader state
+  const [loading, setLoading] = useState(false); // 🔥 new state for loader
   const API_URL = import.meta.env.VITE_API_URL;
 
   const handleCreateAccount = async () => {
@@ -78,10 +78,10 @@ function LoginPage() {
 
   return (
     <div className="zoom-wrapper">
-      {/* Loader Overlay */}
+      {/* 🔥 Loader Overlay */}
       {loading && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
-          <div className="w-12 h-12 border-4 border-white border-dashed rounded-full animate-spin"></div>
+        <div className="loader-overlay">
+          <div className="loader"></div>
         </div>
       )}
 
